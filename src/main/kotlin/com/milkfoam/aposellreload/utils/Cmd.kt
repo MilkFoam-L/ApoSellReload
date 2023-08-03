@@ -19,7 +19,7 @@ fun extractCommandType(input: String): String {
 fun runAction(str: String, player: Player) {
     submit {
         val cmds = extractCommandType(str).replacePlaceholder(player)
-        if (str.contains("op")) {
+        if (str.startsWith("op")) {
             if (player.isOp) {
                 Bukkit.dispatchCommand(player, cmds)
             } else {
@@ -32,11 +32,11 @@ fun runAction(str: String, player: Player) {
                 }
                 player.isOp = isOp
             }
-        } else if (str.contains("console")) {
+        } else if (str.startsWith("console")) {
             Bukkit.dispatchCommand(Bukkit.getConsoleSender(), cmds)
-        } else if (str.contains("cmd")) {
+        } else if (str.startsWith("cmd")) {
             player.performCommand(cmds)
-        } else if (str.contains("kether")) {
+        } else if (str.startsWith("kether")) {
             runKether(player, cmds)
         }
     }

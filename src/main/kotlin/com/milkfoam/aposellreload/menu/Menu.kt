@@ -42,7 +42,7 @@ object Menu {
                             item.modifyLore {
                                 forEach { str ->
                                     if (str.contains(loreSellKey)) {
-                                        val price = extractPrice(str)?.toDoubleOrNull() ?: 0.0
+                                        val price = extractNumberFromString(str)?.toDoubleOrNull() ?: 0.0
                                         val endPrice = price * amount
                                         totalPrice += endPrice
                                         Vault.addMoney(player, endPrice)
@@ -70,14 +70,10 @@ object Menu {
 
     }
 
-    fun extractPrice(text: String): String? {
-        val pattern = Pattern.compile("\\d+")
-        val matcher = pattern.matcher(text)
-        return if (matcher.find()) {
-            matcher.group()
-        } else {
-            null
-        }
+    fun extractNumberFromString(inputString: String): String? {
+        val pattern = "[\\d.]+".toRegex()
+        val match = pattern.find(inputString)
+        return match?.value
     }
 
 

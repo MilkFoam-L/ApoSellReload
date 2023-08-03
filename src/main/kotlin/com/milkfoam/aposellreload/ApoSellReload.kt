@@ -37,7 +37,6 @@ object ApoSellReload : Plugin() {
 
     fun loadSetting() {
         loreSellKey = config.getString("loreSellKey")!!
-        nbtSellKey = config.getString("nbtSellKey")!!
     }
 
     fun loadMenu() {
