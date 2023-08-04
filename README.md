@@ -1,19 +1,5 @@
-# Building
-
-* [Gradle](https://gradle.org/) - Dependency Management
-
-The GradleWrapper in included in this project.
-
-**Windows:**
-
-```
-gradlew.bat clean build
-```
-
-**macOS/Linux:**
-
-```
-./gradlew clean build
-```
-
-Build artifacts should be found in `./build/libs` folder.
+# 注意事项
+本人是代码小白，代码有什么不足的地方可以反馈
+但请不要贬低我和我的代码
+如果您愿意指出错误和优化方法，我会以最虚心的态度去学习
+感谢你的使用
